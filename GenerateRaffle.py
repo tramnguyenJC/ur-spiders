@@ -1,5 +1,4 @@
 from twython import Twython
-import Contestant
 
 TWITTER_APP_KEY = 'vgDa2r4tFyNyDsR0qSbFVNQev'
 TWITTER_APP_KEY_SECRET = 'VzfMzSFYLCSM4NFPaMXRIgVrtEDtGPO1BhamDGZIlYW6ePuxJE'
@@ -17,17 +16,30 @@ search = t.search(q='#hacku5', count=100)
 
 tweets = search['statuses']
 
-raffle = []
+raffle = {}
 
+followers = t.get_followers_ids(screen_name = "DomEnterprises", stringify_ids=true)['ids']
 # adds each user with hashtage #hacku5 to raffle list
 for tweet in tweets:
-	currentUser = Contestant(tweet['user']['screen_name'], tweet['id_str'])
-	raffle.append(currentUser)
+	raffle[tweet['id_str']] = tweet['user']['screen_name']
 
-waitingList = []
+# users that tweeted the hashtag but are not following @DomEnterprises
+waitingList = {}
 
-for user in raffle:
-	if !user.following('DomEnterprises'):
-		waitingList.append(user)
-		raffle.remove(user)
-		generateResponseTweet("Follow DomEnterprises on Twitter to get a Raffle Ticket")
+# get followers of @DomEnterprises 
+
+
+# for each user in the raffle but not following @DomEnterprises add them to waiting list
+for userID in raffle:
+	if userID not in followers:
+		waitingList[userID] = raffle[userID]
+		#generateResponseTweet("Follow DomEnterprises on Twitter to get a Raffle Ticket")
+
+# delete all the raffle participants that were added to the waiting list
+#for key in waitingList:
+#	del raffle[key]
+
+
+print raffle
+
+
