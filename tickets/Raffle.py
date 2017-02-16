@@ -2,8 +2,8 @@ import random
 
 class Raffle:
 
-	def __init__(self, users):
-		self.tweeters = users
+	def __init__(self, tweeters):
+		self.tweeters = tweeters
 
 	def generateRaffle(self):
 
