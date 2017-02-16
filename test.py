@@ -31,4 +31,20 @@ raffleParticipants = dict()
 
 for user in tweepy.Cursor(api.followers, screen_name="DomEnterprises").items():
     print user.screen_name
-    #if (hasHackU()):
+    #print user.hashtag
+    '''if (hasHashTag("HACKU5")):
+    	raffleParticipants.append(user)'''
+
+
+'''def hasHashTag(hashtag):
+	append'''
+
+
+
+
+
+
+
+
+
+
