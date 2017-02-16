@@ -19,12 +19,16 @@ tweets = search['statuses']
 
 raffle = []
 
+
 # adds each user with hashtage #hacku5 to raffle list
 for tweet in tweets:
 	currentUser = Contestant(tweet['user']['screen_name'], tweet['id_str'])
 	raffle.append(currentUser)
 
 waitingList = []
+
+# followers of @DomEnterprises 
+followers = t.get_followers_ids(screen_name = "DomEnterprises")
 
 for user in raffle:
 	if !user.following('DomEnterprises'):
