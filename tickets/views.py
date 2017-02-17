@@ -16,17 +16,23 @@ t = Twython(app_key=TWITTER_APP_KEY,
             oauth_token=TWITTER_ACCESS_TOKEN, 
             oauth_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
 
-search = t.search(q='#hacku5', count=100)
+search = t.search(q='#hacku5', count=10000)
 
 tweets = search['statuses']
+
+followers = t.get_followers_ids(screen_name = "DomEnterprises")['ids']
+
 
 raffle = {}
 
 # adds each user with hashtage #hacku5 to raffle list
 for tweet in tweets:
-	raffle[tweet['id_str']] = tweet['user']['screen_name']
+	raffle[tweet['user']['id']] = tweet['user']['screen_name']
 
-lottery = Raffle(raffle)
+
+eligible = {k:v for k,v in raffle.items() if k in followers}
+
+lottery = Raffle(eligible)
 
 def tickets_choose(request):
     winner = lottery.generateRaffle()
