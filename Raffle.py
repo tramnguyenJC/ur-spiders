@@ -7,7 +7,7 @@ class Raffle:
 
 	def generateRaffle(self):
 
-		userIDs = self.tweeters.keys()
+		userIDs = list(self.tweeters)
 		winnerID = random.choice(userIDs)
 
 		winnerName = self.tweeters[winnerID]
