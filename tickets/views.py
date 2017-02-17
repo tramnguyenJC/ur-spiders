@@ -2,7 +2,7 @@ from django.shortcuts import render
 from twython import Twython
 from Raffle import Raffle
 from django.http import JsonResponse
-
+import requests
 # Create your views here.
 TWITTER_APP_KEY = 'vgDa2r4tFyNyDsR0qSbFVNQev'
 TWITTER_APP_KEY_SECRET = 'VzfMzSFYLCSM4NFPaMXRIgVrtEDtGPO1BhamDGZIlYW6ePuxJE'
@@ -15,6 +15,11 @@ t = Twython(app_key=TWITTER_APP_KEY,
             app_secret=TWITTER_APP_KEY_SECRET, 
             oauth_token=TWITTER_ACCESS_TOKEN, 
             oauth_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
+
+#hashtag = requests.get("searchTxt", "")
+#def output(request):
+#    hashtag = request.GET.get("searchTxt", "")
+#search = t.search(q=hashtag, count=10000)
 
 search = t.search(q='#hacku5', count=10000)
 

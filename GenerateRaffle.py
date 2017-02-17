@@ -12,6 +12,7 @@ t = Twython(app_key=TWITTER_APP_KEY,
             oauth_token=TWITTER_ACCESS_TOKEN, 
             oauth_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
 
+#hashtag = request.GET.get("searchTxt", "")
 search = t.search(q='#hacku5', count=100)
 
 tweets = search['statuses']

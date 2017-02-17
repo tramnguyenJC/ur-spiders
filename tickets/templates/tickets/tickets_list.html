@@ -18,15 +18,31 @@
     </div>    
     <body>
         <div id="wrapper">
-            <div id="leftcol">
-                <a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/hashtag/hacku5" data-widget-id="832329861242961920">#hacku5 Tweets</a>
+            <div id="leftcol">    
+                <script type="text/javascript">
+                function submitform()
+                {
+                    document.forms["myform"].submit();
+                    var input = document.getElementById("searchTxt");
+                    //function searchURL() {
+                       // window.location = "http://www.myurl.com/search/" + input.value;
+                }
+                </script>
+                <form id="myform">
+                    Search hashtag: <input name="searchTxt" type='text' maxlength="512" id="searchTxt" class="searchField">
+                    <a href="javascript: submitform()">Submit</a>
+                </form>
+
+                <script>
+                    var hashtag = location.search.split('searchTxt=')[1];
+                    hashtag = hashtag ? hashtag : '';
+                    document.write('<a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/hashtag/' + hashtag + '" data-widget-id="832329861242961920">#' + hashtag + ' Tweets</a>')
+                </script>
+
+                <!-- <a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/hashtag/hacku5" data-widget-id="832329861242961920">#hacku5 Tweets</a> -->
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
             <div id="rightcol">
-                 <div>
-                    Enter the hashtag: 
-                    <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField"/>
-                </div>
                 <button id="btnChooseWinner" type="button" class="btn btn-success">Choose Winner</button>
                 {% for user in raffle %}
 
