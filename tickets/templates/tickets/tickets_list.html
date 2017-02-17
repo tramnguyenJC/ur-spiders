@@ -6,10 +6,11 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 <html>
     <div class="fixed-header">
         <div class = "iconHeader">
-             <img src="../../static/css/icon.png"  id="icon" alt="Icon">
+            <img src="../../static/css/icon.png"  id="icon" alt="Icon">
         </div>
         <div class="container">
             <h1> Raffle Bot  </h1>
@@ -18,13 +19,14 @@
     <body>
         <div id="wrapper">
             <div id="leftcol">
-                <a class="twitter-timeline" data-width="520" data-height="500" href="https://twitter.com/hashtag/hacku5" data-widget-id="832329861242961920">#hacku5 Tweets</a>
+                <a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/hashtag/hacku5" data-widget-id="832329861242961920">#hacku5 Tweets</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
             <div id="rightcol">
-                <div>
+                 <div>
+                    Enter the hashtag: 
                     <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField"/>
-                <div>
+                </div>
                 <button id="btnChooseWinner" type="button" class="btn btn-success">Choose Winner</button>
                 {% for user in raffle %}
 

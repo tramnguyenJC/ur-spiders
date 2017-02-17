@@ -11,8 +11,8 @@ body{
 	background: #66ccff;
 	color: white;
 	font-size: 250%;
-	opacity: 0.7;
-	box-shadow: 10px 1px 5px #00264d;
+	opacity: 0.2;
+	box-shadow: 40px 0px 0px #00264d;
 }
 
 .container{
@@ -49,25 +49,19 @@ h1 {
 }
 #wrapper{
 	width:1200px;
-	margin: 40px auto;
 	position: relative;
-	margin-top:70px;
 }
 
 #leftcol{
 	width:550px;
-	margin-left:50px;
 	position: fixed;
-	height:900px;
 }
 
 #rightcol{
 	float:right;
 	margin-right:50px;
 	width:550px;
-
 }
-
 
 #btnClose{
 	margin-left: 10px 0 0 10px;
@@ -76,12 +70,15 @@ h1 {
 }
 
 #btnChooseWinner{
-	margin-right: 100px;
+	margin-right: 120px;
 	margin-left:150px;
 	margin-top: 50px;
 	border:1px solid #11151C; 
 }
 
+.searchField{
+	margin-left: 0px;
+}
 
 #dialog {
 	display:none;
@@ -107,10 +104,6 @@ h1 {
 	text-shadow: 1px 0px 1px #004d99;
 	right:0px;
 	top:0;
-}
-
-#searchTxt{
-	margin: 50px 0 50px 50px;
 }
 
 
