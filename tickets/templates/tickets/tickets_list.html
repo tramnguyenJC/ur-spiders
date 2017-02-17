@@ -22,15 +22,29 @@
         {% for user in raffle %}
 
         {% endfor %}
+
+        <div id="dialog" title="Dialog Title"> 
+            <a id="dialog_close" href="#"> x </a>
+            <h1> Winner!</h1> 
+            <h3> </h3>
+
+        </div>
+
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#btnChooseWinner').click(function () {
                     $.ajax({
                         url: '/choose',
                         success: function (data) {
-                            alert(data.winner);
+                            //alert(data.winner);
+                            $("#dialog").text(data.winner);
+                            $("#dialog").show();
                         }
                     });
+                });
+                $("#dialog_close").click(function (event) {
+                    event.preventDefault();
+                    $("#dialog").hide();
                 });
             });
         </script>
