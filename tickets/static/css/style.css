@@ -1,0 +1,33 @@
+
+body{        
+	padding-top: 60px;
+	padding-bottom: 40px;
+	margin-bottom:50px;
+}
+.fixed-header, .fixed-footer{
+	width: 100%;
+	position: fixed;        
+	background: #333;
+	color: #fff;
+	font-size: 250%;
+	text-align: center;
+}
+.fixed-header{
+	top: 0;
+}
+
+.container{
+	width: 80%;
+	margin: 0 auto; /* Center the DIV horizontally */
+}
+.twitter-timeline{
+	padding-top: 50px;
+	margin-left:100px; 
+	border-style: solid;
+    border-width: 10px;
+    border-color: #99ccff;
+}
+#btnChooseWinner{
+	float: right;
+	margin-right: 200px;
+}
