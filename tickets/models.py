@@ -22,8 +22,17 @@ import json
 #Tickets.objects.bulk_create(items)
 
 class Ticket(models.Model):
-    user_name = models.CharField(max_length=200)
+    user_id = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
+
+
+class RaffleWinner(models.Model):
+
+	# unique identifier for tweet
+    tweet_id = models.CharField(max_length=200)
+
+    # store win date so that tweet can win raffle again after specific time period
+    win_date = models.DateTimeField(default=timezone.now) 
 
 def __str__(self):
     return self.title    
