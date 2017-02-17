@@ -8,18 +8,23 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <html>
     <div class="fixed-header">
-            <div class="container">
-                Raffle Bot 
-            </div>
-        </div>    
+        <div class = "iconHeader">
+             <img src="../../static/css/icon.png"  id="icon" alt="Icon">
+        </div>
+        <div class="container">
+            <h1> Raffle Bot  </h1>
+        </div>
+    </div>    
     <body>
-
         <div id="wrapper">
             <div id="leftcol">
-                <a class="twitter-timeline" data-width="520" data-height="600" href="https://twitter.com/hashtag/hacku5" data-widget-id="832329861242961920">#hacku5 Tweets</a>
+                <a class="twitter-timeline" data-width="520" data-height="500" href="https://twitter.com/hashtag/hacku5" data-widget-id="832329861242961920">#hacku5 Tweets</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
             <div id="rightcol">
+                <div>
+                    <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField"/>
+                <div>
                 <button id="btnChooseWinner" type="button" class="btn btn-success">Choose Winner</button>
                 {% for user in raffle %}
 
@@ -27,19 +32,11 @@
             </div>
         </div>
         <div id="dialog" title="Dialog Title"> 
-            <a id="dialog_close" href="#"> x </a>
-            <h1> Winner!</h1> 
+            <a id="dialog_close" href="#"> <button id="btnClose" type="button"> X </button> </a>
+            <h2> Congrats Winner!</h2> 
             <h3> </h3>
 
         </div>
-        <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField"/>
-        <script>
-            var input = document.getElementById("searchTxt");
-
-        function searchURL() {
-            window.location = "http://www.myurl.com/search/" + input.value;
-        }
-        </script>
 
         <script type="text/javascript">
             $(document).ready(function () {
